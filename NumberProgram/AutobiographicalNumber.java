@@ -39,10 +39,30 @@ public class AutobiographicallyNumber {
 		}
 		return true;
 	}
+	static boolean auto(int num){
+        int []num1 = new int[4];
+        for(int i=3;i>=0;i--){
+            num1[i]=num%10; num/=10;
+        }
+        for(int i=0;i<num1.length;i++){
+            int count=0;
+            for(int j=0;j<num1.length;j++){
+                if(i==num1[j]){
+                    count++;
+                }
+            }
+
+            if(count!=num1[i]){
+                return false;
+            }
+        }
+        return true;
+    }
 	public static void main(String[] args) {
 		System.out.println("Enter a number: ");
 		Scanner sc = new Scanner(System.in);
 		int num = sc.nextInt();
 		System.out.println(check(num)?"Autobiographical number":"Not Autobiographical number");
+		System.out.println(auto(num));
 	}
 }
