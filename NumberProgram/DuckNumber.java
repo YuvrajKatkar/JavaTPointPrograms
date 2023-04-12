@@ -27,10 +27,33 @@ public class DuckNumber {
 		}
 		return false;
 	}
+	static int count(int num){
+        int count =0;
+        while(num>0){
+            count++;
+            num/=10;
+        }
+        return count;
+    }
+	static boolean duck(int num1){
+        int num[] = new int[count(num1)];int count=0;
+        for(int i=count(num1)-1;i>=0;i--){
+            num[i]=num1%10;num1/=10;
+            if(num[i]==0){
+                count++;
+            }
+        }
+        if(num[0]!=0&&count>0) {
+            return true;
+        }
+        return false;
+    }
 	public static void main(String[] args) {
 		System.out.println("Enter a number: ");
 		Scanner sc = new Scanner(System.in);
 		String num = sc.next();
+		int num1 = Integer.parseInt(num);
 		System.out.println(check(num)?"Duck number":"Not Duck number");
+		System.out.println(duck(num1));
 	}
 }
