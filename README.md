@@ -1,2 +1,2 @@
 # JavaTPointPrograms
-This repository contains source code for Programming questions in JavaTPoint.
+This repository contains source code for Number Programming questions in JavaTPoint.
